@@ -271,7 +271,7 @@ export const PROJECTS = [
   },
   {
     icon: '🃏',
-    name: 'SprintHub',
+    name: 'Splanner',
     desc: 'Real-time Planning Poker for agile teams — live voting, Scrum Master controls, drag-and-drop backlog, countdown timer, and session export. Runs on Vercel + Supabase free tier.',
     tech: ['Next.js 15', 'Supabase', 'Framer Motion', 'Tailwind'],
     status: 'live' as const,
