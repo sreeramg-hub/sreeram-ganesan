@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom scrollbar ─────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #020617; }
+::-webkit-scrollbar-thumb  { background: #3b82f6; border-radius: 3px; }
+
+/* ── Text selection ───────────────────────────────── */
+::selection { background: rgba(59, 130, 246, 0.3); color: #fff; }
+
+/* ── Gradient text utility ────────────────────────── */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-bright {
+    background: linear-gradient(90deg, #93c5fd, #60a5fa, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Section reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+}
+
+/* ── Typewriter cursor ────────────────────────────── */
+.tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #3b82f6;
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ── Particle canvas ──────────────────────────────── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Timeline line ────────────────────────────────── */
+.timeline-line {
+  background: linear-gradient(to bottom, #3b82f6, transparent);
+}

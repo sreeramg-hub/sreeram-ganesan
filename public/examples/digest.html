@@ -1,0 +1,310 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Precious Metals Digest — June 13, 2026</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #2c2c2c;
+    }
+    .wrapper {
+      max-width: 680px;
+      margin: 32px auto;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .header {
+      background-color: #1a1a2e;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0 0 6px 0;
+      font-size: 22px;
+      color: #f0d080;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    .header p {
+      margin: 0;
+      font-size: 13px;
+      color: #b0b8cc;
+      font-family: Arial, sans-serif;
+    }
+    .body {
+      padding: 28px 32px;
+    }
+    .overview {
+      background-color: #f9f7f0;
+      border-left: 4px solid #b8963e;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      border-radius: 2px;
+    }
+    .overview p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #2c2c2c;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .section-rule {
+      border: none;
+      border-top: 2px solid #b8963e;
+      margin: 0 0 20px 0;
+    }
+    .section-title {
+      font-size: 19px;
+      font-weight: bold;
+      color: #1a1a2e;
+      margin: 0 0 2px 0;
+      letter-spacing: 0.5px;
+    }
+    .section-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .price-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .price-chip {
+      background-color: #f4f4f0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px 16px;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+    .price-chip .label {
+      font-size: 11px;
+      color: #777;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .price-chip .value {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1a1a2e;
+      font-family: Arial, sans-serif;
+    }
+    .price-chip.down .value {
+      color: #b03a2e;
+    }
+    .video-card {
+      background-color: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+    }
+    .video-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      color: #1a1a2e;
+    }
+    .video-meta {
+      font-size: 12px;
+      color: #888;
+      font-family: Arial, sans-serif;
+      margin-bottom: 14px;
+    }
+    .video-meta a {
+      color: #b8963e;
+      text-decoration: none;
+    }
+    .video-meta a:hover {
+      text-decoration: underline;
+    }
+    .key-points {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .key-points li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ebebeb;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #2c2c2c;
+    }
+    .key-points li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .key-points li strong {
+      color: #1a1a2e;
+    }
+    .attribution {
+      font-size: 12px;
+      color: #888;
+      font-family: Arial, sans-serif;
+      font-style: italic;
+    }
+    blockquote {
+      margin: 8px 0 0 0;
+      padding: 8px 14px;
+      background-color: #f4f4f0;
+      border-left: 3px solid #b8963e;
+      font-style: italic;
+      font-size: 13.5px;
+      color: #444;
+      border-radius: 2px;
+    }
+    .note-box {
+      background-color: #fefbea;
+      border: 1px solid #e8d87a;
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #5a4d00;
+      font-family: Arial, sans-serif;
+    }
+    .note-box strong {
+      color: #3d3400;
+    }
+    .no-content-box {
+      background-color: #f7f7f7;
+      border: 1px dashed #ccc;
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #666;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .section-spacer {
+      margin-bottom: 36px;
+    }
+    .disclaimer {
+      background-color: #f0f0f0;
+      border-top: 1px solid #ddd;
+      padding: 18px 32px;
+      font-size: 12px;
+      color: #666;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>Daily Precious Metals Digest</h1>
+      <p>Friday, June 13, 2026 &nbsp;|&nbsp; Gold &amp; Silver Research Round-Up</p>
+    </div>
+
+    <div class="body">
+
+      <!-- MARKET OVERVIEW -->
+      <div class="overview">
+        <p>
+          On June 13, 2026, gold spot settled at <strong>$4,285.80 per ounce</strong>, down <strong>$45.10 (−1.04%)</strong> from the previous close of $4,330.90. Silver spot settled at <strong>$68.07 per ounce</strong>, down <strong>$1.83 (−2.62%)</strong> from the prior close of $69.90. Silver's percentage decline was notably larger than gold's on the day, resulting in a wider gold-to-silver ratio.
+        </p>
+      </div>
+
+      <!-- ==================== GOLD SECTION ==================== -->
+      <div class="section-spacer">
+        <div class="section-header">
+          <span class="section-icon">🥇</span>
+          <h2 class="section-title">Gold</h2>
+        </div>
+        <hr class="section-rule" />
+
+        <!-- Price Bar -->
+        <div class="price-bar">
+          <div class="price-chip">
+            <div class="label">Spot Price</div>
+            <div class="value">$4,285.80</div>
+          </div>
+          <div class="price-chip">
+            <div class="label">Prev. Close</div>
+            <div class="value">$4,330.90</div>
+          </div>
+          <div class="price-chip down">
+            <div class="label">Change</div>
+            <div class="value">▼ −$45.10 (−1.04%)</div>
+          </div>
+        </div>
+
+        <!-- Analyst Note -->
+        <div class="note-box">
+          <strong>Analyst coverage today:</strong> Two new videos from <strong>TheDailyGold</strong> (Jordan Roy-Byrne, CMT, MFTA) were reviewed — one published June 13, 2026 and one published June 6, 2026. No new videos were found on the second tracked channel.
+        </div>
+
+        <!-- Video 1 -->
+        <div class="video-card">
+          <h3>Has Gold Finally Reached a Bottom?</h3>
+          <div class="video-meta">
+            Jordan Roy-Byrne, CMT, MFTA &nbsp;|&nbsp; TheDailyGold &nbsp;|&nbsp; Published: June 13, 2026
+            &nbsp;|&nbsp; <a href="https://www.youtube.com/watch?v=i5XlnmVBxfs" target="_blank">Watch on YouTube ↗</a>
+          </div>
+          <ul class="key-points">
+            <li>
+              <strong>Bottom call — close but not confirmed.</strong><br />
+              According to Jordan Roy-Byrne (TheDailyGold, Jun 13 2026), gold is "damn close" to a bottom, having touched just above $4,000 intraday — near the 38% Fibonacci retracement of the entire bull run. Roy-Byrne stated he believes gold has either already bottomed or could see one final flush to the <strong>$3,850–$3,900</strong> range, but cautioned against obsessing over the exact low:
+              <blockquote>"Whether the bottom's at $3,900, whether it's in a month, 1 week, it happened yesterday… does it really matter?"</blockquote>
+            </li>
+            <li>
+              <strong>Three possible bottoming patterns outlined.</strong><br />
+              Roy-Byrne (TheDailyGold, Jun 13 2026) laid out three technical scenarios: (a) a classic double-bottom with a rally and retest; (b) a sideways grind from the low before pushing higher; and (c) a false breakdown to a lower low followed by a sharp reversal — the pattern he noted characterised the S&amp;P 500's 2009 bottom. He noted that a break below silver's $67 support level would likely trigger scenario (c), leading to a final capitulation and buying climax.
+            </li>
+            <li>
+              <strong>Fundamental driver: real rates and the yield curve.</strong><br />
+              Roy-Byrne (TheDailyGold, Jun 13 2026) argued the correction has been driven by rising real interest rates and a flattening yield curve (the 10yr–2yr spread narrowing), which he described as negative for gold. He identified the key catalyst for the next leg higher as the market pricing out the current expectation of 1.5 rate hikes over the next 12 months, adding:
+              <blockquote>"The Fed chair and the president, they do want rate cuts — it's just a question of whether it's in 12 months, 6 months, 5 months."</blockquote>
+            </li>
+            <li>
+              <strong>Long-term price targets of $7,000–$8,000 by end of 2027.</strong><br />
+              Using his "gold best-fit analog" chart — a composite of 75% of the 1972 breakout and 25% of the 2005 breakout, shifted forward 6.5 months — Roy-Byrne (TheDailyGold, Jun 13 2026) projected gold could reach <strong>$8,000/oz by end of Q3/Q4 2027</strong>. A 50/50 composite of the same two historical periods yields a target of approximately <strong>$7,500</strong>, and a model based solely on the 2006 post-correction trajectory projects <strong>$7,000 by end of 2027</strong>. These are Roy-Byrne's own modelling outputs and are not presented as guaranteed outcomes.
+            </li>
+            <li>
+              <strong>Not a secular peak — allocation data supports further upside.</strong><br />
+              Roy-Byrne (TheDailyGold, Jun 13 2026) presented a chart showing gold's implied allocation via ETFs is currently below 2% of total ETF assets — well beneath the ~7–8% peaks seen in 2008 and 2011. He also cited data from Ronnie Stoeferle's <em>In Gold We Trust</em> report, referencing a JPMorgan Global Family Office survey, which found that 72% of family offices hold no gold at all, and those that do allocate less than 1%. Roy-Byrne stated:
+              <blockquote>"What happens when these people go to a 5% allocation in gold? You can add another zero to the price."</blockquote>
+              He characterised the current correction as a severe intermediate-term correction — not a cyclical or secular peak.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card">
+          <h3>Silver &amp; Gold Just Reached a Critical New Stage</h3>
+          <div class="video-meta">
+            Jordan Roy-Byrne, CMT, MFTA &nbsp;|&nbsp; TheDailyGold &nbsp;|&nbsp; Published: June 6, 2026
+            &nbsp;|&nbsp; <a href="https://www.youtube.com/watch?v=JKx6KTB2_A8" target="_blank">Watch on YouTube ↗</a>
+          </div>
+          <ul class="key-points">
+            <li>
+              <strong>"Final capitulation" declared — correction nearing its end.</strong><br />
+              Roy-Byrne (TheDailyGold, Jun 6 2026) declared that gold and silver had entered "final capitulation," stating:
+              <blockquote>"This is the beginning of the very end of this intermediate-term correction."</blockquote>
+              He said probabilities favoured the correction ending before July and described conditions as setting up for "one of the best buying opportunities we're going to see for a while."
+            </li>
+            <li>
+              <strong>Analog chart pointing to a final low near $4,000.</strong><br />
+              Roy-Byrne's correction analog (comparing the current downturn against those of 1973 and 2006) showed, as of June 6, that a final low had not yet been reached. He identified technical support for gold at <strong>$4,250</strong> and <strong>$4,050</strong>, with a key confluence zone near <strong>$4,000</strong> — just above a prior intraday low of approximately $4,090. He noted that history suggests gold could fall 4–8% below its 200-day moving average before finding a final bottom (TheDailyGold, Jun 6 2026).
+              <br /><br />
+              <span class="attribution">⚠️ Editorial note: In his June 13 video (above), Roy-Byrne updated this view to acknowledge the bottom may already be in as of the June 13 intra
