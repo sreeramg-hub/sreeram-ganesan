@@ -79,14 +79,8 @@ export default function Nav() {
       </div>
 
       {/* Mobile menu */}
-      <div
-        className={`md:hidden absolute top-full left-0 right-0 transition-all duration-200 ease-out ${
-          menuOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 -translate-y-2 pointer-events-none'
-        }`}
-      >
-        <div className="bg-surface-950/98 backdrop-blur-xl border-t border-surface-800 px-6 py-4 flex flex-col gap-4">
+      <div className={`md:hidden absolute top-full left-0 right-0 ${menuOpen ? 'block' : 'hidden'}`}>
+        <div className="bg-[#0c0c14] border-t border-surface-800 px-6 py-4 flex flex-col gap-4 shadow-2xl">
           {NAV_LINKS.map(({ href, label }) => (
             <a
               key={href}
