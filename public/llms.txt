@@ -1,0 +1,28 @@
+# Sreeram Ganesan — sreeramganesan.dev
+
+> Senior Frontend Engineer with 15+ years building high-traffic web applications in Retail and Healthcare.
+
+## About
+
+Sreeram Ganesan is a Senior Frontend Engineer based in Chicago, IL. He has 15+ years of experience delivering digital products at scale across Retail (Grocery, E-Commerce) and Healthcare (Dental, Medical) domains. Currently at CVS Health.
+
+He specializes in React, Next.js, TypeScript, and AI-augmented engineering — including multi-agent AI systems built with CrewAI and Claude.
+
+## Skills
+
+- Frontend: React, Next.js 15, TypeScript, Tailwind CSS, Framer Motion
+- Backend: Node.js, Python, REST APIs, GraphQL
+- AI & Agents: CrewAI, Claude (Anthropic), LangChain, OpenAI APIs
+- Cloud & DevOps: GCP (certified), AWS, Vercel, Docker, GitHub Actions
+
+## Projects
+
+- sreeram-agent-crew: Multi-agent AI crew for daily precious metals digest and price alerts (CrewAI + Claude + GitHub Actions)
+- Splanner: Real-time Planning Poker for agile teams (Next.js 15 + Supabase)
+- Interactive Lab: How the Web Works explainer, AI Lab (Resume Matcher, Architecture Advisor), Performance Monitor
+
+## Links
+
+- Website: https://www.sreeramganesan.dev
+- LinkedIn: https://www.linkedin.com/in/sreeram-ganesan-92237468/
+- GitHub: https://github.com/sreeramg-hub

@@ -20,29 +20,43 @@ const firaCode = Fira_Code({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.sreeramganesan.dev'),
   title: {
     default: 'Sreeram Ganesan — Senior Frontend Engineer',
     template: '%s | Sreeram Ganesan',
   },
   description:
-    'Senior Frontend Engineer specializing in React, Next.js, and modern web architecture. 15+ years building high-traffic web applications in Retail and Healthcare.',
+    'Senior Frontend Engineer with 15+ years building high-traffic web applications in Retail and Healthcare. Specializing in React, Next.js, TypeScript, and AI-augmented engineering.',
   keywords: [
-    'Frontend Engineer', 'React', 'Next.js', 'TypeScript', 'Principal Engineer',
+    'Sreeram Ganesan', 'Frontend Engineer', 'Senior Frontend Engineer',
+    'React', 'Next.js', 'TypeScript', 'Principal Engineer',
     'Frontend Architect', 'Chicago', 'Healthcare Tech', 'Retail Tech',
+    'AI Agents', 'CrewAI', 'Web Performance',
   ],
-  authors: [{ name: 'Sreeram Ganesan' }],
+  authors: [{ name: 'Sreeram Ganesan', url: 'https://www.sreeramganesan.dev' }],
+  creator: 'Sreeram Ganesan',
   openGraph: {
     title: 'Sreeram Ganesan — Senior Frontend Engineer',
-    description: 'Building exceptional web experiences in Retail & Healthcare tech.',
+    description: 'Senior Frontend Engineer with 15+ years in Retail & Healthcare tech. React, Next.js, AI agents.',
+    url: 'https://www.sreeramganesan.dev',
+    siteName: 'Sreeram Ganesan',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sreeram Ganesan — Senior Frontend Engineer',
-    description: 'Building exceptional web experiences in Retail & Healthcare tech.',
+    description: 'Senior Frontend Engineer with 15+ years in Retail & Healthcare tech. React, Next.js, AI agents.',
+    creator: '@sreeramganesan',
   },
-  robots: { index: true, follow: true },
+  alternates: {
+    canonical: 'https://www.sreeramganesan.dev',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
 }
 
 export default function RootLayout({
