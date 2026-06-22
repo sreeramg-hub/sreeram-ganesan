@@ -2,8 +2,6 @@
 
 My personal portfolio and interactive engineering showcase, built with Next.js 15 App Router, TypeScript, and Tailwind CSS.
 
-**Live:** coming soon · **Repo:** [github.com/sreeramg-hub/sreeram-ganesan](https://github.com/sreeramg-hub/sreeram-ganesan)
-
 ---
 
 ## Stack
@@ -64,16 +62,6 @@ public/
 pnpm install
 pnpm dev          # http://localhost:3000
 pnpm build        # Production build
-```
-
-### Environment variables
-
-Copy `.env.example` to `.env.local` and fill in:
-
-```bash
-RESEND_API_KEY=re_xxxx           # From resend.com dashboard
-RESEND_FROM=Portfolio Contact <noreply@yourdomain.com>
-CONTACT_RECIPIENT=you@gmail.com  # Where contact form emails land
 ```
 
 ---

@@ -80,11 +80,13 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? 'max-h-96 border-t border-surface-800' : 'max-h-0'
+        className={`md:hidden absolute top-full left-0 right-0 transition-all duration-200 ease-out ${
+          menuOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
-        <div className="bg-surface-950/98 backdrop-blur-xl px-6 py-4 flex flex-col gap-4">
+        <div className="bg-surface-950/98 backdrop-blur-xl border-t border-surface-800 px-6 py-4 flex flex-col gap-4">
           {NAV_LINKS.map(({ href, label }) => (
             <a
               key={href}

@@ -2,7 +2,7 @@ import { EXPERIENCE } from '@/lib/data'
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-surface-900/40">
+    <section id="experience" className="py-14 sm:py-24 bg-surface-900/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="reveal">
           <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2 flex items-center gap-2">
@@ -12,7 +12,7 @@ export default function Experience() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             Where I&apos;ve <span className="text-gradient">Worked</span>
           </h2>
-          <p className="text-slate-400 mb-12 max-w-xl text-[0.97rem]">
+          <p className="text-slate-400 mb-8 sm:mb-12 max-w-xl text-[0.97rem]">
             15+ years across Retail, Healthcare, and AI — delivering digital products at scale, from in-store POS systems to patient-facing platforms and multi-agent automations.
           </p>
         </div>
@@ -22,7 +22,7 @@ export default function Experience() {
           <div className="absolute left-0 top-2 bottom-0 w-px timeline-line" />
 
           {EXPERIENCE.map((job, i) => (
-            <div key={job.company} className={`relative pb-12 ${i === EXPERIENCE.length - 1 ? 'pb-0' : ''}`}>
+            <div key={job.company} className={`relative pb-8 sm:pb-12 ${i === EXPERIENCE.length - 1 ? 'pb-0' : ''}`}>
               {/* Timeline dot */}
               <div
                 className={`absolute -left-[1.35rem] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-surface-900 ${

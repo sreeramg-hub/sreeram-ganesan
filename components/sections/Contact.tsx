@@ -70,7 +70,7 @@ export default function Contact() {
     'w-full bg-surface-950 border border-surface-700 rounded-xl px-4 py-3 text-slate-200 text-sm placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 transition-colors'
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-14 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center reveal">
           <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2 flex items-center justify-center gap-2">

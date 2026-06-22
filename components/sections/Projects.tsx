@@ -38,7 +38,7 @@ const personalProjects = PROJECTS.filter(p => p.type === 'personal')
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-14 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Section header */}
@@ -122,7 +122,7 @@ export default function Projects() {
 
         {/* ── Open Source / Personal ──────────────────────────── */}
         <div className="reveal">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mt-16 mb-6">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mt-10 sm:mt-16 mb-6">
             Open Source / Personal
           </p>
         </div>

@@ -3,9 +3,9 @@ import { ABOUT } from '@/lib/data'
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-surface-900/40">
+    <section id="about" className="py-14 sm:py-24 bg-surface-900/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Avatar column */}
           <div className="flex flex-col items-center gap-6 reveal">

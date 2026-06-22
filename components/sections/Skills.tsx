@@ -2,7 +2,7 @@ import { SKILLS } from '@/lib/data'
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-14 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="reveal">
           <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2 flex items-center gap-2">
@@ -12,7 +12,7 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             My <span className="text-gradient">Toolkit</span>
           </h2>
-          <p className="text-slate-400 text-sm max-w-xl mb-12 italic">
+          <p className="text-slate-400 text-sm max-w-xl mb-8 sm:mb-12 italic">
             &ldquo;{SKILLS.intro}&rdquo;
           </p>
         </div>

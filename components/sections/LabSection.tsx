@@ -11,7 +11,7 @@ function saveScroll() {
 
 export default function LabSection() {
   return (
-    <section id="lab" className="py-24 bg-surface-900/40">
+    <section id="lab" className="py-14 sm:py-24 bg-surface-900/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="reveal">
           <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2 flex items-center gap-2">
@@ -21,7 +21,7 @@ export default function LabSection() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             Interactive <span className="text-gradient">Experiments</span>
           </h2>
-          <p className="text-slate-400 mb-12 max-w-xl text-[0.97rem]">
+          <p className="text-slate-400 mb-8 sm:mb-12 max-w-xl text-[0.97rem]">
             Where I explore ideas that go beyond the day job. Each experiment reflects something I genuinely
             believe in — first-principles thinking, AI-augmented engineering, and obsessing over performance.
           </p>
