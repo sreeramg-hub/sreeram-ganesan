@@ -312,6 +312,16 @@ export const LAB_ITEMS = [
     tagColor: 'text-yellow-400 border-yellow-400/30 bg-yellow-400/10',
     status: 'live' as const,
   },
+  {
+    href: '/lab/performance-glossary',
+    icon: '📖',
+    title: 'Performance Glossary',
+    desc: `Every web performance term explained twice — once technically, once like you're five.
+      TTFB, LCP, CLS, INP, TBT and 10 more. Searchable, filterable, ELI5-friendly.`,
+    tags: ['Reference', 'Core Web Vitals', 'ELI5'],
+    tagColor: 'text-blue-400 border-blue-400/30 bg-blue-400/10',
+    status: 'live' as const,
+  },
 ]
 
 export const CONTACT = {

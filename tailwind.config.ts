@@ -20,12 +20,12 @@ const config: Config = {
           600: '#2563eb', // hover states
           700: '#1d4ed8', // pressed states
         },
-        // Dark background scale
+        // Dark background scale — driven by CSS custom properties for theme switching
         surface: {
-          950: '#020617', // deepest bg
-          900: '#0f172a', // card bg
-          800: '#1e293b', // border / divider
-          700: '#334155', // subtle bg
+          950: 'rgb(var(--surface-950) / <alpha-value>)',
+          900: 'rgb(var(--surface-900) / <alpha-value>)',
+          800: 'rgb(var(--surface-800) / <alpha-value>)',
+          700: 'rgb(var(--surface-700) / <alpha-value>)',
         },
       },
       fontFamily: {

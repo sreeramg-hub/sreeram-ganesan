@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.sreeramganesan.dev',
   },
+  verification: {
+    google: 'PASTE_YOUR_VERIFICATION_CODE_HERE',
+  },
   robots: {
     index: true,
     follow: true,
@@ -69,6 +72,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${firaCode.variable} scroll-smooth`}
     >
+      <head>
+        {/* Prevent flash of wrong theme before React hydrates */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();` }} />
+      </head>
       <body className="bg-surface-950 text-slate-100 font-sans antialiased">
         <Nav />
         <main>{children}</main>

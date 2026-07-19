@@ -12,10 +12,28 @@ const NAV_LINKS = [
   { href: '/#lab',        label: 'Lab'        },
 ]
 
+const SunIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+)
+
+const MoonIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+)
+
 export default function Nav() {
   const [scrolled, setScrolled]   = useState(false)
   const [menuOpen, setMenuOpen]   = useState(false)
+  const [theme, setTheme]         = useState<'dark' | 'light'>('dark')
   const pathname = usePathname()
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light') setTheme('light')
+  }, [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -23,8 +41,18 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close menu on route change
   useEffect(() => setMenuOpen(false), [pathname])
+
+  function toggleTheme() {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    localStorage.setItem('theme', next)
+    if (next === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light')
+    } else {
+      document.documentElement.removeAttribute('data-theme')
+    }
+  }
 
   return (
     <nav
@@ -57,6 +85,15 @@ export default function Nav() {
             </li>
           ))}
           <li>
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-surface-800 transition-colors"
+            >
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </button>
+          </li>
+          <li>
             <Link
               href="/#contact"
               className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-colors shadow-glow-blue"
@@ -66,9 +103,11 @@ export default function Nav() {
           </li>
         </ul>
 
+        {/* Hamburger (mobile only) */}
+        <div className="md:hidden flex items-center gap-2">
         {/* Hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -76,11 +115,12 @@ export default function Nav() {
           <span className={`block w-6 h-0.5 bg-slate-300 transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
           <span className={`block w-6 h-0.5 bg-slate-300 transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       <div className={`md:hidden absolute top-full left-0 right-0 ${menuOpen ? 'block' : 'hidden'}`}>
-        <div className="bg-[#0c0c14] border-t border-surface-800 px-6 py-4 flex flex-col gap-4 shadow-2xl">
+        <div className="bg-surface-950 border-t border-surface-800 px-6 py-4 flex flex-col gap-4 shadow-2xl">
           {NAV_LINKS.map(({ href, label }) => (
             <a
               key={href}
