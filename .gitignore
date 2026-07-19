@@ -37,3 +37,12 @@ Thumbs.db
 *.log
 npm-debug.log*
 pnpm-debug.log*
+
+# Old static site (pre-Next.js placeholder)
+/css/
+/index.html
+/js/
+/lab/
+
+# Claude Code local settings
+.claude/settings.local.json
