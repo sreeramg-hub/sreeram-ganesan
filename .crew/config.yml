@@ -1,0 +1,70 @@
+# Crew configuration for the portfolio. Read from the default branch by every crew workflow.
+
+project:
+  name: Sreeram Ganesan Portfolio
+  owner: sreeramg-hub
+
+model: claude-sonnet-5
+
+standards_file: CLAUDE.md
+goals_file: .crew/goals.md
+sources_file: .crew/sources.yml
+
+node_version: "22"
+commands:
+  package_manager: pnpm
+  pnpm_version: "11"                # pnpm-workspace.yaml uses allowBuilds, which needs pnpm 11
+  install: pnpm install --frozen-lockfile
+  lint: pnpm lint
+  typecheck: pnpm exec tsc --noEmit
+  build: pnpm build
+  start: pnpm start
+
+preview:
+  mode: local
+  url: http://localhost:3000
+
+production:
+  url: https://www.sreeramganesan.dev
+
+pages:
+  - /
+  - /lab
+  - /lab/how-web-works
+  - /lab/ai-lab
+  - /lab/performance
+  - /lab/performance-glossary
+
+screenshots:
+  viewports:
+    - { name: mobile, width: 390, height: 844 }
+    - { name: desktop, width: 1440, height: 900 }
+  color_schemes: [dark, light]
+
+scout:
+  timezone: America/Chicago
+  max_proposals: 5
+  tracks:
+    quality: 2
+    feature: 2
+    learn: 2
+
+coder:
+  max_size: M
+  max_fix_rounds: 3
+  branch_prefix: crew/
+  allow_new_dependencies: false
+  commit_as_owner: true
+  protected_paths:
+    - .github/**
+    - .crew/**
+    - .env*
+    - "*.pem"
+    - "*.key"
+    - CLAUDE.md
+
+limits:
+  scout_turns: 40
+  approver_turns: 4
+  coder_turns: 60
+  reviewer_turns: 30
