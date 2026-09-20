@@ -48,12 +48,21 @@ export default function Hero() {
     let W = 0, H = 0
     let mouse = { x: -999, y: -999 }
     let animId: number
+    let isMobile = false
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    // below this viewport width, thin out particles and shorten connection
+    // checks so the O(n²) connection loop stays cheap on phones
+    const MOBILE_BREAKPOINT = 640
+    const connectionDistance = () => (isMobile ? 70 : 110)
 
     function resize() {
       if (!canvas) return
       W = canvas.width  = canvas.offsetWidth
       H = canvas.height = canvas.offsetHeight
-      const count = Math.floor((W * H) / 16000)
+      isMobile = W < MOBILE_BREAKPOINT
+      const count = Math.floor((W * H) / (isMobile ? 32000 : 16000))
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.35,
@@ -61,6 +70,37 @@ export default function Hero() {
         r: Math.random() * 2 + 0.5,
         a: Math.random() * 0.5 + 0.1,
       }))
+      if (reduceMotion) drawStatic()
+    }
+
+    function drawConnections() {
+      const maxD = connectionDistance()
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x
+          const dy = particles[i].y - particles[j].y
+          const d  = Math.sqrt(dx * dx + dy * dy)
+          if (d < maxD) {
+            ctx.beginPath()
+            ctx.moveTo(particles[i].x, particles[i].y)
+            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.strokeStyle = `rgba(59,130,246,${0.1 * (1 - d / maxD)})`
+            ctx.lineWidth = 0.8
+            ctx.stroke()
+          }
+        }
+      }
+    }
+
+    function drawStatic() {
+      ctx.clearRect(0, 0, W, H)
+      for (const p of particles) {
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(96,165,250,${p.a})`
+        ctx.fill()
+      }
+      drawConnections()
     }
 
     function draw() {
@@ -80,22 +120,7 @@ export default function Hero() {
         ctx.fillStyle = `rgba(96,165,250,${p.a})`
         ctx.fill()
       }
-      // connections
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x
-          const dy = particles[i].y - particles[j].y
-          const d  = Math.sqrt(dx * dx + dy * dy)
-          if (d < 110) {
-            ctx.beginPath()
-            ctx.moveTo(particles[i].x, particles[i].y)
-            ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(59,130,246,${0.1 * (1 - d / 110)})`
-            ctx.lineWidth = 0.8
-            ctx.stroke()
-          }
-        }
-      }
+      drawConnections()
       animId = requestAnimationFrame(draw)
     }
 
@@ -105,14 +130,30 @@ export default function Hero() {
     }
     const onLeave = () => { mouse = { x: -999, y: -999 } }
 
+    const onVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animId)
+      } else {
+        animId = requestAnimationFrame(draw)
+      }
+    }
+
     window.addEventListener('resize', resize)
-    canvas.addEventListener('mousemove', onMouse)
-    canvas.addEventListener('mouseleave', onLeave)
     resize()
-    draw()
+
+    if (!reduceMotion) {
+      canvas.addEventListener('mousemove', onMouse)
+      canvas.addEventListener('mouseleave', onLeave)
+      document.addEventListener('visibilitychange', onVisibility)
+      if (!document.hidden) draw()
+    }
+
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', resize)
+      canvas.removeEventListener('mousemove', onMouse)
+      canvas.removeEventListener('mouseleave', onLeave)
+      document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 

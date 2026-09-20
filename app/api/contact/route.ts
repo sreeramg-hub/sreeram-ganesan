@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: NextRequest) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error('[contact route] Missing RESEND_API_KEY')
+      return NextResponse.json({ error: 'Failed to send message. Please try again.' }, { status: 500 })
+    }
+
     const { name, email, message } = await req.json()
 
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
@@ -15,6 +18,8 @@ export async function POST(req: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json({ error: 'Invalid email address.' }, { status: 400 })
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
       from: process.env.RESEND_FROM ?? 'Portfolio Contact <onboarding@resend.dev>',
