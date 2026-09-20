@@ -91,3 +91,14 @@ main  ──── always deployable, auto-deploys to production
   └── feature/your-change  ← work here, open PR, preview URL auto-generated
 ```
 Never push directly to `main`. Always open a PR.
+
+---
+
+## Agent crew
+A weekly GitHub crew (Scout → owner approval → Coder → Reviewer → owner merge → Verifier) maintains this site.
+Config and goals live in `.crew/`; `.crew/goals.md` states the direction: **educational content** (tech radar,
+"did you know" facts, explainers) alongside quality and feature work. Crew PRs use branches named `crew/…`.
+Rules for the crew and for anyone editing alongside it:
+- Every educational fact needs a primary source URL and an as-of date in its `lib/data.ts` entry.
+- Never invent claims, opinions, metrics or experience for Sreeram; ask him instead.
+- The crew may not edit `.github/`, `.crew/` or this file, and may not add dependencies.

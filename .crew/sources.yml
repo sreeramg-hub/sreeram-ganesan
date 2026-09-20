@@ -1,0 +1,28 @@
+# Starting points for the Scout's weekly research. Hints, not limits: it may go further, but every
+# item must cite a primary source it actually opened.
+
+areas:
+  - name: Web platform and performance
+    sources:
+      - https://web.dev/blog
+      - https://developer.chrome.com/blog
+      - https://developer.mozilla.org/en-US/blog/
+      - https://webkit.org/blog/
+  - name: Frameworks and tooling
+    sources:
+      - https://nextjs.org/blog
+      - https://react.dev/blog
+      - https://tailwindcss.com/blog
+      - https://devblogs.microsoft.com/typescript/
+      - https://vercel.com/changelog
+      - https://github.blog/changelog/
+  - name: Generative AI and agents
+    sources:
+      - https://www.anthropic.com/news
+      - https://www.anthropic.com/engineering
+      - https://modelcontextprotocol.io
+      - https://huggingface.co/blog
+      - https://arxiv.org/list/cs.AI/recent
+  - name: Retail and healthcare technology
+    sources:
+      - https://hl7.org/fhir/
