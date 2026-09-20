@@ -141,9 +141,7 @@ export default function Hero() {
     window.addEventListener('resize', resize)
     resize()
 
-    if (reduceMotion) {
-      drawStatic()
-    } else {
+    if (!reduceMotion) {
       canvas.addEventListener('mousemove', onMouse)
       canvas.addEventListener('mouseleave', onLeave)
       document.addEventListener('visibilitychange', onVisibility)
